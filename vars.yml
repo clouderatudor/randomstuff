@@ -1,0 +1,19 @@
+---
+nifi:
+  name: "nifi config copy"
+  source: /home/tudor/Work/testdir/
+  targets:
+  - name: gw
+    dir: /home/tudor/trg/
+    host: gw
+  - name: bigmac
+    dir: pi@pi4:/home/pi/trg/
+dnsmasq:
+  name: "dnsmasq config copy"
+  source: /etc/dnsmasq.d/
+  targets:
+  - name: gw
+    dir: /home/tudor/dnm/
+    host: gw
+  - name: bigmac
+    dir: pi@pi4:/home/pi/dnm/

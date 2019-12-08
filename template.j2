@@ -1,0 +1,30 @@
+settings {
+    logfile = "copy.log",
+    statusFile = "status.txt",
+    insist = true,
+    maxDelays = 1,
+    nodaemon   = true,
+}
+{% for item in items %}
+# {{ items[item].name }}
+{% for target in items[item].targets %}
+sync {
+    # {{ target.name }}
+{% if target.host is defined %}
+    default.rsyncssh,
+{% else %}
+    default.rsync,
+{% endif %}
+    source    = "{{ items[item].source }}",
+    targetdir = "{{ target.dir }}",
+{% if target.host is defined %}
+    host      = "{{ target.host }}",
+{% endif %}
+    delay     = 150,
+    rsync     = {
+        archive  = true,
+        compress = true
+    }
+}
+{% endfor %}
+{% endfor %}

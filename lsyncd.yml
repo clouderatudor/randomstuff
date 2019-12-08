@@ -1,0 +1,12 @@
+---
+- hosts: localhost
+  tasks:
+    - name: "load copy lists"
+      include_vars:
+        file: vars.yml
+        name: items
+    - name: "create an lsyncd configuration"
+      template:
+        src: template.j2
+        dest: test.conf
+
