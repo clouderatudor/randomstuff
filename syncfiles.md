@@ -12,13 +12,14 @@ ITSEC people happy. The main advantage is that the customer can decide when to
 have changes. 
 
 On the other hand our current customers are more interested in a hands off
-setup so it's not a signicant advantage. On the other hand we should have to
+setup so it's not a signicant advantage. 
+
+As a disatvantage we should have to
 install scheduled jobs, scripts, other magic on the customer side, and we
 should monitor it from their side too, which is against the basic idea to
 change as few details on their side as possible.
 
 So it's push.
-
 
 ## Lsyncd
 1. Lua config file, all filenames between quotes, all lines end with commas
@@ -44,6 +45,4 @@ except the last.
 1. Possible harder to log it, but logger helps us
 1. No need to install stuff on the other side, even if rsync is missing. Why
    would it be missing, but who knows?
-
-
 
