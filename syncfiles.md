@@ -21,6 +21,11 @@ change as few details on their side as possible.
 
 So it's push.
 
+## Things to think about
+
+1. How much do we want this to be automated? Without any change control it would be a wonderful way to propagate typoes to major outages. I trust that this is handled on another level.
+2. Look into how to give quirky rsyc/ssh options to lsyncd because it's not that trivial. Some of them can be given in the config file, others need lua coding. 
+
 ## Lsyncd
 1. Lua config file, all filenames between quotes, all lines end with commas
 except the last.
